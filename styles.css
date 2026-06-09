@@ -6,13 +6,14 @@
   --gold: #b08d57;
   --blush: #e3b9b3;
   --blush-soft: #f0d8d3;
+  --paper-edge: #e7dcc8;
   --script: "Pinyon Script", cursive;
   --serif: "Cormorant Garamond", serif;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--serif);
@@ -20,7 +21,24 @@ body {
   background: var(--ivory);
   font-size: 18px;
   line-height: 1.6;
+  position: relative;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ---------- Bordo "carta di Amalfi" (deckle edge) ----------
+   Cornice assoluta grande quanto la pagina: scorre col contenuto.
+   L'anello interno sborda di 44px ma viene ritagliato dal contenitore
+   (overflow: hidden), cos&igrave; il lato esterno strappato finisce fuori e
+   resta dritto verso lo schermo: lo strappo &egrave; solo sul lato interno. */
+.deckle-svg { position: absolute; width: 0; height: 0; }
+.page-frame {
+  position: absolute; inset: 0; z-index: 50;
+  pointer-events: none; overflow: hidden;
+}
+.page-frame__cut {
+  position: absolute; inset: -44px;
+  border: 74px solid var(--paper-edge);
+  filter: url("#deckle") drop-shadow(0 0 5px rgba(107, 85, 68, .22));
 }
 
 /* ---------- Reveal animation ---------- */
@@ -282,4 +300,5 @@ section { padding: 90px 24px; }
   .timeline__item { grid-template-columns: 58px 1fr; gap: 16px; }
   .timeline__time { font-size: 18px; }
   .timeline__content { padding-left: 22px; }
+  .page-frame__cut { border-width: 60px; }
 }

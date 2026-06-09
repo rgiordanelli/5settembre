@@ -11,6 +11,19 @@
 </head>
 <body>
 
+  <!-- Filtro SVG per il bordo "carta di Amalfi" (deckle edge) -->
+  <svg class="deckle-svg" width="0" height="0" aria-hidden="true">
+    <filter id="deckle">
+      <feTurbulence type="fractalNoise" baseFrequency="0.015 0.025" numOctaves="4" seed="8" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="22" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+  </svg>
+
+  <!-- Cornice a bordo sfrangiato: scorre col contenuto, strappo solo sul lato interno -->
+  <div class="page-frame" aria-hidden="true">
+    <div class="page-frame__cut"></div>
+  </div>
+
   <!-- HERO -->
   <header class="hero">
     <div class="petals" aria-hidden="true"></div>
