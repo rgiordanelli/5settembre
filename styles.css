@@ -138,15 +138,11 @@ section { padding: 90px 24px; }
 /* ---------- Showcase ---------- */
 .showcase {
   text-align: center;
+  min-height: 52vh;
   background:
     linear-gradient(rgba(251,247,240,.6), rgba(244,236,224,.65)),
     url("images/foto-1.jpg");
   background-size: cover; background-position: center;
-}
-.showcase__quote {
-  font-family: var(--script); font-size: clamp(34px, 6vw, 54px);
-  line-height: 1.2; max-width: 640px; margin: 0 auto;
-  color: var(--sepia);
 }
 
 /* ---------- Events ---------- */
