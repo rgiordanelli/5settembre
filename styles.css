@@ -233,7 +233,18 @@ section { padding: 90px 24px; }
   padding: 22px 26px; border: 1px solid rgba(176,141,87,.4); border-radius: 8px;
   background: #fffdf9; color: var(--sepia-soft); font-style: italic;
 }
+.timeline__stay p { margin: 0; }
 .timeline__stay strong { color: var(--sepia); font-style: normal; }
+.stay__call {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 18px; text-decoration: none; font-style: normal;
+  color: var(--sepia); background: #fff;
+  border: 1px solid rgba(176,141,87,.5); border-radius: 999px;
+  padding: 11px 22px; letter-spacing: .04em; font-size: 17px;
+  box-shadow: 0 6px 16px rgba(107,85,68,.1); transition: .3s;
+}
+.stay__call:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-3px); box-shadow: 0 10px 22px rgba(107,85,68,.18); }
+.stay__call-icon { color: var(--gold); font-size: 19px; }
 
 /* ---------- Mood ---------- */
 .mood {
